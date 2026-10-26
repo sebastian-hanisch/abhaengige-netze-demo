@@ -122,7 +122,7 @@ st.caption(
 )
 tab1, tab2 = st.tabs(["Schichtart", "Anteil gekoppelter Paare"])
 with tab1:
-    st.markdown("**Gleiche Kopplung, verschiedene Schichten.** Zufallsnetze brechen abrupt zusammen, skalenfreie Netze nicht; ein Gitter bricht abrupt zusammen, wenn die Kopplung zufällig ist, und gar nicht zusätzlich, wenn beide Schichten dieselbe Lage haben.")
+    st.markdown("**Gleiche Kopplung, verschiedene Schichten.** Zufallsnetze brechen abrupt zusammen, skalenfreie Netze (Barabási–Albert, mittlerer Grad 4) nicht; ein Gitter bricht abrupt zusammen, wenn die Kopplung zufällig ist, und gar nicht zusätzlich, wenn beide Schichten dieselbe Lage haben.")
     if st.button("Reihe rechnen", key="layers_button"):
         t0 = time.perf_counter()
         with st.spinner("Rechne die Reihe (einige Sekunden) …"):
@@ -136,7 +136,7 @@ with tab1:
         getattr(st, kind)(text)
         st.caption(f"Rechenzeit dieser Sitzung: {num(st.session_state['layers_done'], 1)} s (beim ersten Mal; danach liegt das Ergebnis im Zwischenspeicher).")
 with tab2:
-    st.markdown("**Je weniger Paare gekoppelt sind, desto weicher der Übergang.** Zwei Zufallsnetze, Anteil q gekoppelter Paare von 0 (gewöhnliche Perkolation) bis 1.")
+    st.markdown("**Tendenz: Je weniger Paare gekoppelt sind, desto weicher der Übergang (nicht streng monoton).** Zwei Zufallsnetze, Anteil q gekoppelter Paare von 0 (gewöhnliche Perkolation) bis 1.")
     if st.button("Reihe rechnen", key="coupling_button"):
         t0 = time.perf_counter()
         with st.spinner("Rechne die Reihe (einige Sekunden) …"):
